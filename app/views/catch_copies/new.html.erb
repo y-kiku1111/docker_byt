@@ -1,0 +1,14 @@
+<div class="contents row">
+  <div class="container">
+    <%= form_with(model: @catch_copy, local: true) do |f| %>
+      <h3>
+        投稿する
+      </h3>
+      <%= f.text_field :title, placeholder: "キャッチコピー", autofocus: true %>
+      <%= f.text_field :job_category, placeholder: "職種名", autofocus: true %>
+      <%= f.text_field :target, placeholder: "ターゲット", autofocus: true %>
+      <%= f.text_field :image, placeholder: "Image Url", autofocus: true %>
+      <%= f.submit "SEND" %>
+    <% end %>
+  </div>
+</div>

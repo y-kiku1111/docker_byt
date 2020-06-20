@@ -1,0 +1,22 @@
+<div class ="contents row">
+  <div class="content_post" style="background-image: url(<%= @catch_copy.image %>);">
+      <span><%= image_tag '/arrow_top.png' %></span>
+       <% if user_signed_in? && current_user.id == @catch_copy.user_id %>
+        <div class="more">
+          <ul class="more_list">
+            <li>
+              <%= link_to '編集', "/catch_copies/#{@catch_copy.id}/edit", method: :get %>
+            </li>
+            <li>
+              <%= link_to '削除', "/catch_copies/#{@catch_copy.id}", method: :delete %>
+            </li>
+          </ul>
+        </div>
+      <% end %>
+      <%= simple_format(@catch_copy.job_category ) %>
+      <%= simple_format(@catch_copy.target) %>
+      <span class="title">
+        <%= @catch_copy.title %>
+  </div>
+  <%= paginate(@catch_copy) %>
+</div>

@@ -1,0 +1,14 @@
+<div class="contents row">
+  <div class="container">
+    <%= form_with(model: @catch_copy, local: true) do |form| %>
+      <h3>
+        編集する
+      </h3>
+      <%= form.text_field :title, placeholder: "Nickname" %>
+      <%= form.text_field :image, placeholder: "Image Url" %>
+      <%= form.text_area :target, placeholder: "ターゲット" %>
+      <%= form.text_area :job_category, placeholder: "職種" %>
+      <%= form.submit "SEND" %>
+    <% end %>
+  </div>
+</div>

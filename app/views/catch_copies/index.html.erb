@@ -1,0 +1,33 @@
+<div class="contents row">
+  <% @catch_copies.each do |catch_copies| %>
+    <div class="content_post" style="background-image: url(<%= catch_copies.image %>);">
+      <div class="more">
+        <span><%= image_tag '/arrow_top.png' %></span>
+        <ul class="more_list">
+          <li>
+            <%= link_to '詳細', "/catch_copies/#{catch_copies.id}", method: :get %>
+          </li>
+          <% if user_signed_in? && current_user.id == catch_copies.user_id %>
+            <li>
+              <%= link_to '編集', "/catch_copies/#{catch_copies.id}/edit", method: :get %>
+            </li>
+            <li>
+              <%= link_to '削除', "/catch_copies/#{catch_copies.id}", method: :delete %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+      <%= simple_format(catch_copies.job_category ) %>
+      <%= simple_format(catch_copies.target) %>
+      <span class="title">
+        <%= catch_copies.title %>
+      </span>
+      <span class="name">
+        <a href="/users/<%= catch_copies.user.id %>">
+      <span>投稿者</span><%= catch_copies.user.nickname %>
+        </a>
+      </span>
+    </div>
+  <% end %>
+  <%= paginate(@catch_copies) %>
+</div>
