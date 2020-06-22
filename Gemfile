@@ -69,4 +69,5 @@ gem 'haml-rails'
 gem 'devise'
 gem 'compass-rails', '3.1.0'
 gem 'kaminari'
+gem 'rails-i18n', '~> 5.1' 
 
