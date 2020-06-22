@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  catch_copy: one
+  text: MyText
+
+two:
+  user: two
+  catch_copy: two
+  text: MyText

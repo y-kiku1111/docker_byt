@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_19_075523) do
+ActiveRecord::Schema.define(version: 2020_06_21_094918) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,16 @@ ActiveRecord::Schema.define(version: 2020_06_19_075523) do
     t.datetime "updated_at", null: false
     t.bigint "user_id"
     t.index ["user_id"], name: "index_catch_copies_on_user_id"
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "catch_copy_id", null: false
+    t.text "text", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["catch_copy_id"], name: "index_comments_on_catch_copy_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -40,4 +50,6 @@ ActiveRecord::Schema.define(version: 2020_06_19_075523) do
   end
 
   add_foreign_key "catch_copies", "users"
+  add_foreign_key "comments", "catch_copies"
+  add_foreign_key "comments", "users"
 end

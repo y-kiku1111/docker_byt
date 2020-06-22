@@ -1,6 +1,6 @@
 class CatchCopiesController < ApplicationController
   before_action :set_catch_copy, only: [:show, :edit, :update, :destroy]
-  before_action :move_to_index, except: [:index, :show]
+  before_action :move_to_index, except: [:index, :show, :search]
 
   # GET /catch_copies
   # GET /catch_copies.json
@@ -10,8 +10,12 @@ class CatchCopiesController < ApplicationController
 
   # GET /catch_copies/1
   # GET /catch_copies/1.json
+
   def show
+    @comment = Comment.new
+    @comments = @catch_copy.comments.includes(:user)
   end
+
 
   # GET /catch_copies/new
   def new
@@ -59,6 +63,10 @@ class CatchCopiesController < ApplicationController
       format.html { render :destroy, notice: 'Catch copy was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def search
+    @catch_copies = CatchCopy.search(params[:keyword])
   end
 
   private
