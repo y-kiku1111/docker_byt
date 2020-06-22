@@ -1,12 +1,8 @@
 <div class="contents row">
   <p><%= @nickname %>さんの投稿一覧</p>
 
-  <% @catch_copy .each do |catch_copy | %>
-    <div class="content_post" style="background-image: url(<%= catch_copy.image %>);">
-      <%= simple_format(catch_copy.job_category ) %>
-      <%= simple_format(catch_copy.target) %>
-      <span class="title">
-        <%= catch_copy.title %>
-    </div>
+  <% @catch_copies.each do |catch_copy | %>
+    <%= render partial: "catch_copies/catch_copy", locals: { catch_copy: catch_copy } %>
   <% end %>
+    <%= paginate(@catch_copies) %>
 </div>

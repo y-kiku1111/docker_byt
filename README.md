@@ -5,10 +5,10 @@
 |password|string|null: false|
 |nickname|string|null: false|
 ### Association
-has_many:catch_copys
+has_many:catch_copies
 has_many:comments
 
-## catch_copysテーブル
+## catch_copiesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |title|text|null: false|
@@ -25,9 +25,8 @@ has_many:comments
 |------|----|-------|
 |text|text|null: false|
 |user_id|references|null: false,foreign_key: true|
-|catch_copys_id|references|null: false|
-||||
-||||"
+|catch_copy_id|references|null: false,foreign_key: true|
+
 ### Association
 belongs_to :user
 belongs_to :catch_copy
