@@ -70,3 +70,4 @@ gem 'devise'
 gem 'compass-rails', '3.1.0'
 gem 'kaminari'
 
+
