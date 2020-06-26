@@ -1,0 +1,1 @@
+$('#like-btn-<%= @catch_copy.id %>').html("<%= escape_javascript(render partial: "likes/like", locals: { catch_copy: @catch_copy }) %>");

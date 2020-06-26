@@ -1,0 +1,14 @@
+
+<% if Like.find_by(user_id: current_user.id, catch_copy_id: catch_copy.id) %>
+  <%= link_to 'よくない',  destroy_catch_copy_path(catch_copy), method: :delete,class: "fa-lg fas fa-heart icon-btn" %>
+    <%# <i class="fa-lg fas fa-heart icon-btn">よくないね</i> %>
+<% else %>
+  <%= link_to 'いいね', create_catch_copy_path(catch_copy), method: :post,class: "fa-lg fas fa-heart icon-btn"%>
+    <%# <i class="fa-lg fas fa-heart icon-btn">いいね</i> %>
+<% end %>
+<%= catch_copy.likes.length %>
+
+
+
+
+

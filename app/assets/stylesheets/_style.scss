@@ -16,7 +16,6 @@ $gray: #D8D8D8;
 $lightGray: #f5f5f3;
 $white: white;
 
-
 //mixin
 
 @mixin boxBase($margin: 30px auto, $padding: 10px) {
@@ -32,8 +31,8 @@ $white: white;
 
 body,html {
   height: 100%;
-  background-image: url(/photo0000-2593.jpg);
-  // background-color: $lightGray;
+  background-image: url(/toukyou.jpg);
+  background-repeat:no-repeat;
 }
 
 body {
@@ -100,6 +99,13 @@ h1,h2,h3,h4,h5,h6 {
 
 .title {
   font-weight: bold;
+  position: absolute;
+  left: 349px;
+  right: 100px;
+  top: 52px;
+  margin: 0;
+  font-size: 24px;
+  z-index: 2;
 }
 
 .title--big {
@@ -128,12 +134,12 @@ header.header {
     position: relative;
     h1.grid-6 {
       font-size: 30px;
-      line-height: 65px;
+      line-height: 22px;
       float: left;
       a {
+        @extend .btn;
         display: block;
-        margin-right: 300px;
-        color: white;
+        width: 140px;
       }
     }
     div.grid-6 {
@@ -141,12 +147,8 @@ header.header {
       text-align: right;
       a.post {
         @extend .btn;
-        width: 120px;
         display: inline-left;
-        margin-left: 10px;
-        font-size: 16px;
-        line-height: 25px;
-        margin-top: 9px;
+
       }
     }
   }
@@ -155,13 +157,14 @@ header.header {
     height: 100px;
     right: 0;
     span {
-      top: 5px;
+      top: 9px;
       display: block;
       float: left;
       margin-left: 30px;
       width: 150px;
       height: 50px;
       font-size: 1em;
+      color: white;
       cursor: pointer;
       position: relative;
       &:after {
@@ -189,6 +192,7 @@ header.header {
           padding: 10px 20px;
           text-align: left;
           border-bottom: 1px solid #d8d8d8;
+          
         }
       }
      }
@@ -214,7 +218,7 @@ header.header {
 div.contents.row {
   h2 {
     @include boxBase(20px 0, 0);
-    font-size: 45px;
+    font-weight: normal;
     strong {
       font-weight: bold;
       padding-right: 5px;
@@ -226,11 +230,9 @@ div.contents.row {
   }
   div.content_post {
     @include boxBase(20px 0 ,30px);
-    width: 60%;
-    margin: 0 auto;
-    margin-top: 70px;
     position: relative;
-    height: 400px;
+    height: 300px;
+    width: 720px;
     color: #fff;
     background-size: cover;
     background-position: center center;
@@ -249,6 +251,7 @@ div.contents.row {
       z-index: 1;
       border-radius: 3px;
     }
+
     .more {
       position: absolute;
       cursor: pointer;
@@ -297,9 +300,66 @@ div.contents.row {
       margin: 0;
       font-size: 20px;
       z-index: 2;
-      font-weight: bold;
-      text-shadow: 0 0 2px #000, 0 0 1px #000, 0 0 1px #000;
     }
+
+    .image{
+      @extend .serif;
+      position: absolute;
+      left: 30px;
+      right: 100px;
+      top: 40px;
+      margin: 0;
+      font-size: 20px;
+      z-index: 2;
+      width: 300px;
+      height: 200px;
+    }
+
+    .job_category{
+      @extend .serif;
+      position: absolute;
+      left: 349px;
+      right: 0px;
+      bottom: 137px;
+      margin: 0;
+      font-size: 16px;
+      z-index: 2;
+    }
+
+    .job_name{
+      @extend .serif;
+      position: absolute;
+      left: 400px;
+      right: 100px;
+      bottom: 137px;
+      margin: 0;
+      font-size: 16px;
+      z-index: 2;
+    }
+
+    .target{
+      @extend .serif;
+      position: absolute;
+      left: 349px;
+      right: 100px;
+      bottom: 110px;
+      margin: 0;
+      font-size: 16px;
+      z-index: 2;
+    }
+
+    .target_name{
+      @extend .serif;
+      position: absolute;
+      left: 460px;
+      right: 100px;
+      bottom: 110px;
+      margin: 0;
+      font-size: 16px;
+      z-index: 2;
+    }
+
+
     span.name {
       position: absolute;
       right: 30px;
@@ -360,18 +420,11 @@ form {
       background-color: 
       lighten($accent, 10%);
     }
-
-
   }
-
 
 }
 .container {
-  height: 90%;
-  width: 50%;
-  margin: auto;
-  margin-top: 50px;
-  padding: 55px;
+  @include boxBase(20px 0 ,30px);
   box-shadow: 0 0 10px rgba($black,0.2);
   background-color:rgba(255, 255, 255, 0.05);
   box-sizing: border-box;
@@ -380,7 +433,7 @@ form {
   padding: 5px;
   margin-top: 15px;
   a {
-    color: $accent;
+    color:white;
     &:hover {
       text-decoration: underline;
     }
@@ -406,4 +459,95 @@ footer {
   .search-btn {
     width: 10%;
   }
+}
+
+.page.current{
+color: white;
+}
+
+::placeholder{
+  color:white
+}
+
+
+
+.btn-xl {
+  margin: 100px 0 0 545px;
+  padding: 1.25rem 3.5rem;
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 2.125rem;
+  font-weight: 700;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #57C3E9;
+  border-color: #57C3E9;
+}
+.btn-primary:hover {
+  color: #fff;
+  background-color: #fec810;
+  border-color: #fec503;
+}
+.btn-primary:focus, .btn-primary.focus {
+  color: #fff;
+  background-color: #fec810;
+  border-color: #fec503;
+  box-shadow: 0 0 0 0.2rem rgba(254, 216, 84, 0.5);
+}
+.btn-primary.disabled, .btn-primary:disabled {
+  color: #fff;
+  background-color: #fed136;
+  border-color: #fed136;
+}
+.btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active, .show > .btn-primary.dropdown-toggle {
+  color: #fff;
+  background-color: #fec503;
+  border-color: #f3bd01;
+}
+.btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus, .show > .btn-primary.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(254, 216, 84, 0.5);
+}
+
+.masthead-subheading {
+  font-size: 1.5rem;
+  font-style: italic;
+  line-height: 1.5rem;
+  margin-bottom: 25px;
+  font-family: "Droid Serif", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  margin: 0 0 0 433px;
+}
+
+.masthead-heading {
+  color: white;
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin: 30px 500px 0 500px;
+  font-family: "Droid Serif", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.fa-lg.fas.fa-heart.icon-btn{
+  position: absolute;
+  left: 349px;
+  right: 100px;
+  bottom: 90px;
+  margin: 0;
+  font-size: 12px;
+  z-index: 2;
+  color: pink;
+  a{
+    color: pink;
+  }
+}
+
+
+.like{
+position: absolute;
+left: 347px;
+right: 100px;
+bottom: 60px;
+margin: 0;
+font-size: 16px;
+z-index: 2;
+color: pink;
 }

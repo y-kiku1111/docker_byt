@@ -69,6 +69,14 @@ class CatchCopiesController < ApplicationController
     @catch_copies = CatchCopy.search(params[:keyword])
   end
 
+  def new_guest
+    user = User.find_or_create_by!(email: 'guest@example.com') do |user|
+    user.password = SecureRandom.urlsafe_base64
+    end
+    sign_in user
+    redirect_to root_path, notice: 'ゲストユーザーとしてログインしました。'
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_catch_copy
@@ -81,6 +89,6 @@ class CatchCopiesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def catch_copy_params
-      params.require(:catch_copy).permit(:title, :target, :job_category, :image).merge(user_id: current_user.id)
+      params.require(:catch_copy).permit(:title, :target, :job_category, :image,).merge(user_id: current_user.id)
     end
 end
