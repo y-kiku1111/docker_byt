@@ -42,15 +42,14 @@ body {
 h1,h2,h3,h4,h5,h6,body {
 line-height: 1.57;
   letter-spacing: 0.15em;
-  font-size: 16px;
-  color: black;
+  color: white;
   font-family: 'Unica One', "Avenir", "游ゴシック", "YuGothic", "ヒラギノ角ゴ Pro W6", "HIragino Kaku Gothic Pro W6", "HIragino Kaku Gothic Pro", Osaka, Meiryo, "メイリオ", "ＭＳ Ｐゴシック", "MS P Gothic", sans-serif;
   margin: 0;
 }
 
 a {
   text-decoration: none;
-  color: $dark;
+  color:white;
   @extend .transition;
   &:hover {
     color: $accent;
@@ -469,10 +468,8 @@ color: white;
   color:white
 }
 
-
-
 .btn-xl {
-  margin: 100px 0 0 545px;
+  margin: 100px 0 0 591px;
   padding: 1.25rem 3.5rem;
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 2.125rem;
@@ -550,4 +547,36 @@ margin: 0;
 font-size: 16px;
 z-index: 2;
 color: pink;
+}
+
+.edit.h3{
+  color: white;
+  background-color: #ff4646;
+  text-align: center;
+}
+
+.guestbtn {
+  width: 600px;
+  margin-bottom: 30px;
+  text-align: center;
+
+  a{
+    @extend .transition;
+    width: 100%;
+    margin: 5px 0 15px;
+    padding: 10px;
+    background-color: $accent;
+    border-radius: 20px;
+    color: #fff;
+    border: 0;
+    font-size: 18px;
+    display:block;
+
+    &:hover {
+      background-color: 
+      lighten($accent, 10%);
+    }
+  }
+
+
 }

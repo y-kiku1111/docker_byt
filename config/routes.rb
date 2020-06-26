@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   post 'like/:id' => 'likes#create', as: 'create_like'
   delete 'like/:id' => 'likes#destroy', as: 'destroy_like'
  
-  # post '/catch_copies/guest_sign_in', to: 'catch_copies#new_guest'  
+  post '/catch_copies/guest_sign_in', to: 'catch_copies#new_guest'  
   
   resources :catch_copies do
     resources :comments, only: :create
@@ -15,5 +15,4 @@ Rails.application.routes.draw do
     end
 
   end
-
 end
