@@ -1,0 +1,10 @@
+<span class="fa-lg fas fa-heart icon-btn"><%= catch_copy.likes.count %></span>
+<% if Like.find_by(user_id: current_user.id, catch_copy_id: catch_copy.id) %>
+  <%= link_to '応援しない',  destroy_like_path(catch_copy), method: :delete,class: "like" %>
+<% else %>
+  <%= link_to '投稿者を応援', create_like_path(catch_copy), method: :post,class: "like"%>
+<% end %>
+
+
+
+

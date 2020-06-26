@@ -1,3 +1,7 @@
+@import "setting";
+@import 'loading';
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
 @import "/myapp/app/assets/config/colors";
 @import "style";
-@import "_flash";
+@import "flash";

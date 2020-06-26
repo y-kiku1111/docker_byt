@@ -1,8 +1,8 @@
 <div class ="contents row">
-  <div class="content_post" style="background-image: url(<%= @catch_copy.image %>);">
-      <span><%= image_tag '/arrow_top.png' %></span>
+  <div class="content_post">
        <% if user_signed_in? && current_user.id == @catch_copy.user_id %>
         <div class="more">
+          <span><%= image_tag '/arrow_top.png' %></span>
           <ul class="more_list">
             <li>
               <%= link_to '編集', "/catch_copies/#{@catch_copy.id}/edit", method: :get %>
@@ -13,10 +13,19 @@
           </ul>
         </div>
       <% end %>
-      <%= simple_format(@catch_copy.job_category ) %>
-      <%= simple_format(@catch_copy.target) %>
       <span class="title">
         <%= @catch_copy.title %>
+      </span>
+      <%= image_tag(@catch_copy.image,class: 'image') %>
+      <div class="job_category">
+        <span>職種：</span>
+      </div>
+      <%= simple_format(@catch_copy.job_category,class: 'job_name') %>
+       <div class="target">
+       <span>ターゲット：
+       </div>
+       </span>
+      <%= simple_format(@catch_copy.target,class: 'target_name') %>
   </div>
     <div class="container">
     <% if current_user %>

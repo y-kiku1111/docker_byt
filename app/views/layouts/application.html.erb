@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>BYT</title>
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <title>BestYourTitle</title>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= javascript_include_tag 'application'%>
     <%= csrf_meta_tags %>
     <script type="text/javascript">
       WebFontConfig = {
@@ -22,19 +22,29 @@
   </head>
 
   <body>
+  <div id="loading">
+    <div class="spinner"></div>
+  </div>
     <header class="header">
       <div class="header__bar row">
-        <h1 class="grid-6"><a href="/">BYT</a></h1>
         <% if user_signed_in? %>
+        <h1 class="grid-6"><a  href="/">TOPに戻る</a></h1>
           <div class="user_nav grid-6">
-            <%= link_to   "マイページ", "/users/#{current_user.id}", class: "post" %>
+            <span><%= current_user.nickname %>
+              <ul class="user__info">
+                <li>
+                  <%= link_to "マイページ", "/users/#{current_user.id}" %>
+                  <%= link_to "編集", edit_user_registration_path%>
+                  <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+                </li>
+              </ul>
+            </span>
             <%= link_to  "投稿する", "/catch_copies/new", class: "post" %>
-            <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "post"  %>
           </div>
         <% else %>
           <div class="grid-6">
             <%= link_to "ログイン", new_user_session_path, class: 'post' %>
-            <%= link_to "新規登録", new_user_registration_path, class: 'post' %>
+            <%= link_to 'ゲスト', catch_copies_guest_sign_in_path, method: :post, class: 'post' %>
           </div>
         <% end %>
       </div>

@@ -1,10 +1,17 @@
-<%= form_tag("/catch_copies/search", local: true, method: :get, class: "search-form") do %>
-  <%= text_field_tag "keyword",'', {placeholder: "投稿を検索する", class: "search-input"} %>
-  <%= submit_tag "検索", class: "search-btn" %>
-<% end %>
-<div class="contents row">
-  <% @catch_copies.each do |catch_copy| %>
-    <%= render partial: "catch_copy", locals: { catch_copy: catch_copy } %>
+ <% if user_signed_in? %>
+  <%= form_tag("/catch_copies/search", local: true, method: :get, class: "search-form") do %>
+    <%= text_field_tag "keyword",'', {placeholder: "投稿を検索する", class: "search-input"} %>
+    <%= submit_tag "検索", class: "search-btn" %>
   <% end %>
-  <%= paginate(@catch_copies) %>
-</div>
+  <div class="contents row">
+    <% @catch_copies.each do |catch_copy| %>
+      <%= render partial: "catch_copy", locals: { catch_copy: catch_copy } %>
+      
+    <% end %>
+    <%= paginate(@catch_copies) %>
+  </div>
+<% else %>
+    <h1 class="masthead-heading">BestYourTitle</h1>
+    <span  class="masthead-subheading">画像に合わせて心に響くキャッチコピーを作成しよう！</span>
+    <a class="btn btn-primary btn-xl" href="/users/sign_up">新規会員登録</a>
+<% end %>
