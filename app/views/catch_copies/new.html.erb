@@ -2,12 +2,21 @@
   <div class="container">
     <%= form_with(model: @catch_copy, local: true) do |f| %>
       <h3>
-        投稿する
+        あなたの「ベストタイトル」 を投稿しよう
       </h3>
-      <%= f.text_field :title, placeholder: "画像に合うキャッチコピーを入力してください", autofocus: true %>
-      <%= f.text_field :job_category, placeholder: "お仕事内容を入力してください", autofocus: true %>
-      <%= f.text_field :target, placeholder: "キャッチコピーのターゲットを入力してください", autofocus: true %>
-      <%= f.text_field :image, placeholder: "画像のUrlを入力してください", autofocus: true %>
+        <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="https://haniwaman.com/wp-content/uploads/2018/05/swiper01.png" alt="Swiper01"></div>
+          <div class="swiper-slide"><img src="https://haniwaman.com/wp-content/uploads/2018/05/swiper02.png" alt="Swiper02"></div>
+          <div class="swiper-slide"><img src="https://haniwaman.com/wp-content/uploads/2018/05/swiper03.png" alt="Swiper03"></div>
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+      <%= f.text_field :image, placeholder: "求人画像のURLを入力", autofocus: true %>
+      <%= f.text_field :title, placeholder: "画像に合うキャッチコピー(タイトル)を入力", autofocus: true, maxlength: "20" %>
+      <%= f.text_field :job_category, placeholder: "職種を入力(例:飲食店など)", autofocus: true %>
+      <%= f.text_field :target, placeholder: "キャッチコピーのターゲットを入力(例:学生など)", autofocus: true %>
       <%= f.submit "SEND" %>
     <% end %>
   </div>
