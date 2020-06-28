@@ -3,6 +3,8 @@
 他の方にコメントやいいね(共感)され、キャッチコピーセンスを上げる事を
 目的としたアプリです。
 
+![toukyoutop](https://user-images.githubusercontent.com/63326271/85952012-8cb88e80-b9a1-11ea-8d18-50c334dc1e61.png)
+
 # 機能一覧:
 
 ## ユーザー
