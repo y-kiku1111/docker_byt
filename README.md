@@ -4,6 +4,7 @@
 目的としたアプリです。
 
 ![toukyoutop](https://user-images.githubusercontent.com/63326271/85952012-8cb88e80-b9a1-11ea-8d18-50c334dc1e61.png)
+![f823687e57e552392a9c81293762ba4c](https://user-images.githubusercontent.com/63326271/85952162-61826f00-b9a2-11ea-9eae-2e9b4a790f7e.jpg)
 
 # 機能一覧:
 
@@ -56,7 +57,7 @@
 - 投稿ページの画像投稿機能を強化
 など
 
-# テーブル設計
+## テーブル設計
 
 ## usersテーブル
 |Column|Type|Options|
