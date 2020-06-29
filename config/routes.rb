@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   resources :users, only: :show
   root to: 'catch_copies#index'
+  post 'catch_copies/ranking' => 'catch_copies#ranking'
   post 'like/:id' => 'likes#create', as: 'create_like'
   delete 'like/:id' => 'likes#destroy', as: 'destroy_like'
    

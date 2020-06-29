@@ -1,2 +1,2 @@
 
-$("#like-<%= @catch_copy.id %>").html("<%= j(render partial: 'users/like', locals: { catch_copy: @catch_copy }) %>");
+$(".<%= @catch_copy.id %>").html("<%= j(render partial: 'catch_copies/like', locals: { catch_copy: @catch_copy }) %>");

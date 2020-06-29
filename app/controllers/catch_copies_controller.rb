@@ -1,11 +1,16 @@
 class CatchCopiesController < ApplicationController
   before_action :set_catch_copy, only: [:show, :edit, :update, :destroy]
-  before_action :move_to_index, except: [:index, :show, :search]
+  before_action :move_to_index, except: [:index, :show, :search,:ranking]
 
   # GET /catch_copies
   # GET /catch_copies.json
   def index
     @catch_copies = CatchCopy.includes(:user).order("created_at DESC").page(params[:page]).per(3)
+  end
+
+  def ranking
+    @catch_copies = CatchCopy.includes(:user).order("created_at DESC").page(params[:page]).per(3)
+    @all_ranks = CatchCopy.find(Like.group(:catch_copy_id).order('count(catch_copy_id) desc').limit(3).pluck(:catch_copy_id))
   end
 
   # GET /catch_copies/1

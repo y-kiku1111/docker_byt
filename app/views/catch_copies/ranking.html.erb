@@ -2,14 +2,11 @@
   <%= form_tag("/catch_copies/search", local: true, method: :get, class: "search-form") do %>
     <%= text_field_tag "keyword",'', {placeholder: "投稿を検索する", class: "search-input"} %>
     <%= submit_tag "検索", class: "search-btn" %>
-  <% end %>
-   <%= link_to '「いいね」ランキング順', catch_copies_ranking_path, method: :post,class:"ranking" %>
-
+<% end %>
   <div class="contents row">
-    <% @catch_copies.each do |catch_copy| %>
-      <%= render partial: "catch_copy", locals: { catch_copy: catch_copy } %>
+    <% @all_ranks.each do |ranks| %>
+      <%= render partial: "catch_copy", locals: { catch_copy: ranks } %>
     <% end %>
-
     <%= paginate(@catch_copies) %>
   </div>
 <% else %>
