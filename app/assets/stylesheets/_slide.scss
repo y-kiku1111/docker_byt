@@ -1,0 +1,153 @@
+
+/* =======================
+#General
+======================= */
+* {margin: 0; padding: 0;}
+body {position: relative; height: 100vh; font-family: 'Cinzel', serif; font-size: 16px;}
+
+
+
+/* =======================
+#Slideshow
+======================= */
+.container2 {
+  height: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+
+/* #Slider */
+.slider {width: 100%; height: 90%; overflow: hidden;}
+
+.slides {width: calc(100% * 5); height: 100%; position: relative; left: -100%;}
+.slides__img {width: calc(100% / 5); height: 100%; float: left; background-position: center; background-repeat: no-repeat; background-size: cover; position: relative;}
+.slides__img__filter {width: 100%; height: 100%; background-color: #000; position: absolute; top: 0; left: 0; z-index: 10; opacity: 0.3;}
+
+/* #Captions */
+.slide__caption {width: 100%; text-align: center; color: #fff; position: absolute; bottom: 5%; z-index: 20; opacity: 0}
+.slide__caption__title {font-size: 3em; line-height: 1.05em;}
+.slide__caption__subtitle {font-size: 2.25em; line-height: 1.25em;}
+.slide__caption__text {font-size: 1.75em; line-height: 1.25em;}
+
+/* #Controls */
+.control {cursor: pointer; position: absolute; z-index: 20; top: calc(50% - 50px); padding: 15px; color: #fff; font-size: 3em; opacity: 0.5;}
+.control:hover {background-color: #fff; opacity: 0.5; color: #000; color: rgba(0, 0, 0, 0.5);}
+#prev {left: 331px; top: 300px; border-radius: 0 5px 5px 0;}
+#next {right: 331px; top: 300px; border-radius: 5px 0 0 5px;}
+
+/* #Indicators */
+.dots {width: 100%; position: absolute; z-index: 20; bottom: 48%; text-align: center;}
+.dots__single {cursor: pointer; display: inline-block; width: 20px; height: 6px; background-color: #fff; opacity: 0.5; margin: 0 5px;}
+.dots__single:hover,
+.dots__current {opacity: 1;}
+
+
+
+/* ########################
+Media Queries
+######################## */
+
+/* ------------------------
+#Desktop, iPad Pro
+------------------------ */
+@media only screen and (min-width: 1024px) and (max-width: 1170px) {
+
+}
+
+/* ------------------------
+#Display 12", iPad Pro portrait, iPad landscape
+------------------------ */
+@media only screen and (max-width: 1024px) {
+
+}
+
+/* ------------------------
+#Medium Devices, Desktops
+------------------------ */
+@media only screen and (max-width: 992px) {
+
+  /* #Captions */
+  .slide__caption__title {font-size: 2.5em; line-height: 1.125em;}
+  .slide__caption__subtitle {font-size: 2em;}
+
+  /* #Controls */
+  .prev,
+  .next {font-size: 2.5em;}
+
+}
+
+/* ------------------------
+#Display 5.5", iPad portrait, iPhone 6, 6s, 7, 8 portrait and landscape, iPhone 5s landscape
+------------------------ */
+@media only screen and (max-width: 768px) {
+
+  /* #Captions */
+  .slide__caption__subtitle {font-size: 1.625em;}
+  .slide__caption__text {font-size: 1.5em;}
+
+}
+
+/* ------------------------
+#Extra Small Devices, Phones
+------------------------ */
+@media only screen and (max-width: 480px) {
+
+  /* #Captions */
+  .slide__caption__title {font-size: 2em; line-height: 1.25em;}
+  .slide__caption__subtitle {line-height: 1.15384615em;}
+  .slide__caption__text {font-size: 1.375em; line-height: 1.13636364em;}
+
+  /* #Controls */
+  .prev,
+  .next {font-size: 2em;}
+
+}
+
+/* ------------------------
+#Display 4", iPhone 5s portrait
+------------------------ */
+@media only screen and (max-width: 320px) {
+
+  /* #Controls */
+  .prev,
+  .next {font-size: 1.5em;}
+
+}
+
+
+
+/* =======================
+#Hacks & Fixes
+======================= */
+/* Clearfix Hack*/
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+/* IE6 */
+* html .clearfix {
+  zoom: 1;
+}
+/* IE7 */
+*:first-child+html .clearfix {
+  zoom: 1;
+}
+
+/* Box Size Hack */
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}

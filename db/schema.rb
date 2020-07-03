@@ -16,10 +16,13 @@ ActiveRecord::Schema.define(version: 2020_06_23_032333) do
   enable_extension "plpgsql"
 
   create_table "catch_copies", force: :cascade do |t|
-    t.text "title"
-    t.string "target"
-    t.text "job_category"
-    t.text "image"
+    t.text "title", null: false
+    t.text "image", null: false
+    t.text "job_category", null: false
+    t.string "target", null: false
+    t.text "pay", null: false
+    t.text "commuting", null: false
+    t.text "shift", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"

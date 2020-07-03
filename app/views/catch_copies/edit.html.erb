@@ -1,14 +1,21 @@
 <div class="contents row">
   <div class="container">
-    <%= form_with(model: @catch_copy, local: true) do |form| %>
+    <%= form_with(model: @catch_copy, local: true) do |f| %>
       <h3>
-        編集する
+        編集
       </h3>
-      <%= form.text_field :title, placeholder: "Nickname" %>
-      <%= form.text_field :image, placeholder: "Image Url" %>
-      <%= form.text_area :target, placeholder: "ターゲット" %>
-      <%= form.text_area :job_category, placeholder: "職種" %>
-      <%= form.submit "SEND" %>
+      <%= f.text_field :title, placeholder: "タイトル(キャッチコピー)を入力", maxlength: "20" %>
+      <%= f.label :職種 %>
+      <%= f.text_field :job_category %>
+      <%= f.label :ターゲット %>
+      <%= f.text_field :target, class:"target" %>
+      <%= f.label :時給 %>
+      <%= f.text_field :pay, class:"pay" %>
+      <%= f.label :勤務シフト %>
+      <%= f.text_field :shift, class:"shift" %>
+      <%= f.label :最寄り駅からの距離 %>
+      <%= f.text_field :commuting, class:"commuting" %>
+      <%= f.submit "SEND" %>
     <% end %>
   </div>
 </div>

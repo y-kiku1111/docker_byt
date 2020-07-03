@@ -3,6 +3,9 @@
     <%= text_field_tag "keyword",'', {placeholder: "投稿を検索する", class: "search-input"} %>
     <%= submit_tag "検索", class: "search-btn" %>
 <% end %>
+   <div class="latest" >「響いた！」ランキング順   |
+   <%= link_to '最新記事一覧に変更', catch_copies_path, class:"ranking" %>
+  </div>
   <div class="contents row">
     <% @all_ranks.each do |ranks| %>
       <%= render partial: "catch_copy", locals: { catch_copy: ranks } %>
