@@ -162,7 +162,7 @@ $(document).ready(function() {
   $(function () {
     $(".slides__img").eq(0).click( function() {
       $(".image_send").val("/photo/cafe.jpg");
-      $(".send_job").val("フード・飲食/ホールスタッフ");
+      $(".send_job").val("ホールスタッフ");
       $(".target").val("20代/学生向け");
       $(".pay").val("時給1,100円");
       $(".shift").val("17:00〜22:00");
@@ -173,7 +173,7 @@ $(document).ready(function() {
   $(function () {
     $(".slides__img").eq(1).click( function() {
       $(".image_send").val("/photo/cashier.jpg");
-      $(".send_job").val("食品販売/レジ打ちスタッフ");
+      $(".send_job").val("レジ打ちスタッフ");
       $(".target").val("30代/主婦(夫)向け");
       $(".pay").val("時給1,100円");
       $(".shift").val("10:00〜15:00");
@@ -184,7 +184,7 @@ $(document).ready(function() {
   $(function () {
     $(".slides__img").eq(2).click( function() {
       $(".image_send").val("/photo/driver.jpg");
-      $(".send_job").val("軽作業・物流/ドライバー・運転手");
+      $(".send_job").val("ドライバー・運転手");
       $(".target").val("40代/ドライバー経験者向け");
       $(".pay").val("時給1,300円");
       $(".shift").val("7:00〜16:00");
@@ -195,7 +195,7 @@ $(document).ready(function() {
   $(function () {
     $(".slides__img").eq(3).click( function() {
       $(".image_send").val("/photo/data.jpg");
-      $(".send_job").val("オフィス/データ入力スタッフ");
+      $(".send_job").val("データ入力スタッフ");
       $(".target").val("30代/主婦(夫)向け");
       $(".pay").val("時給1,100円");
       $(".shift").val("10:00〜18:00");
@@ -206,7 +206,7 @@ $(document).ready(function() {
   $(function () {
     $(".slides__img").eq(4).click( function() {
       $(".image_send").val("/photo/moving.jpg");
-      $(".send_job").val("軽作業・物流/移転・引っ越しスタッフ");
+      $(".send_job").val("移転・引っ越しスタッフ");
       $(".target").val("20代/フリーター向け");
       $(".pay").val("時給1,300円");
       $(".shift").val("10:00〜17:00");
