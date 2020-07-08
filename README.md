@@ -3,7 +3,7 @@
 求人広告を書く際に「応募したい！」と思ってもらえるような
 キャッチコピーを書けるよう、練習をするサイトです。
 
-[リンク]:https://www.bestyourtitle.com/
+[リンク]:[https://www.bestyourtitle.com/]
 ※ゲストログイン機能から気軽にお試し頂けます※
 
 ![0807b84593e579d5e9515addd31381f5](https://user-images.githubusercontent.com/63326271/86881167-d125f600-c128-11ea-9d43-195848ed8872.gif)
