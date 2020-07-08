@@ -6,7 +6,7 @@
 【URL】https://www.bestyourtitle.com/
 ※ゲストログイン機能から気軽に、全機能をお試し頂けます※
 
-<img src="https://user-images.githubusercontent.com/63326271/86881167-d125f600-c128-11ea-9d43-195848ed8872.gif" width="40%">
+<img src="https://user-images.githubusercontent.com/63326271/86881167-d125f600-c128-11ea-9d43-195848ed8872.gif" width="60%">
 
 # 特に見ていただきたい点(インフラ面)
 - Dockerを使い、ECS(FARGATE)/ECRで本番環境をサーバーレスで運用している点。
