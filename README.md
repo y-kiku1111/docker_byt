@@ -4,11 +4,11 @@
 キャッチコピーを書けるよう、練習をするサイトです。
 
 【URL】https://www.bestyourtitle.com/
-
-※ゲストログイン機能から気軽にお試し頂けます※
+※ゲストログイン機能から気軽に、全機能をお試し頂けます※
 
 ![0807b84593e579d5e9515addd31381f5](https://user-images.githubusercontent.com/63326271/86881167-d125f600-c128-11ea-9d43-195848ed8872.gif)
 
+<img src="https://user-images.githubusercontent.com/63326271/86881167-d125f600-c128-11ea-9d43-195848ed8872.gif" width="300px">
 
 # 特に見ていただきたい点(インフラ面)
 - Dockerを使い、ECS(FARGATE)/ECRで本番環境をサーバーレスで運用している点。
