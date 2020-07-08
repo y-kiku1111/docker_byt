@@ -4,9 +4,9 @@
 キャッチコピーを書けるよう、練習をするサイトです。
 
 [リンク]:https://www.bestyourtitle.com/
-※ただ今、改修中です
+※ゲストログイン機能から気軽にお試し頂けます※
 
-![toukyoutop](https://user-images.githubusercontent.com/63326271/85952012-8cb88e80-b9a1-11ea-8d18-50c334dc1e61.png)
+![0807b84593e579d5e9515addd31381f5](https://user-images.githubusercontent.com/63326271/86881167-d125f600-c128-11ea-9d43-195848ed8872.gif)
 
 
 # 特に見ていただきたい点(インフラ面)
@@ -41,20 +41,19 @@
 - Javascript / jQuery
 
 ## 開発環境
-- Dcoker
+- Docker/docker-compose
 - ruby 2.5.0
 - Rails 5.2.3
 
 ## インフラ構成
 - AWS(ECS(FARGATE)/ECR/ELB/Route53/ACM/RDS)
 - Nginx, unicorn
-- CircleCIによる自動デプロイ(予定)
+- CircleCIによる自動デプロイ
 
 ## テスト(実装予定)
 - rubocop
 - Rspec(単体、結合テスト) 
 - CircleCI
-
 
 ## テーブル設計
 

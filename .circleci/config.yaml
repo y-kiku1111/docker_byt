@@ -1,0 +1,40 @@
+version: 2.1
+orbs:
+  aws-ecr: circleci/aws-ecr@1.0.0
+  aws-ecs: circleci/aws-ecs@0.0.6
+
+executors:
+  docker_build:
+    machine:
+      docker_layer_caching: true
+
+workflows:
+  build-and-deploy:
+    jobs:
+      - build
+      - aws-ecr/build_and_push_image:
+          executor: docker_build
+          name: 'build-staging'
+          account-url: AWS_ECR_ACCOUNT_URL
+          region: AWS_REGION
+          repo: 'kiku-alias/docker_byt'
+          tag: "${CIRCLE_SHA1}"
+          path: ./
+          dockerfile: Dockerfile-staging
+          requires:
+            - build
+          filters:
+            branches:
+              only:
+                - staging
+      - aws-ecs/deploy-service-update:
+          requires:
+            - build-staging
+          family: '<Fargateのタスク定義名>'
+          service-name: '<Fargateのサービス名>'
+          cluster-name: '<Fargateのクラスタ名>'
+          container-image-name-updates: 'container=<タスク定義で設定したコンテナ名>,image-and-tag=${AWS_ECR_ACCOUNT_URL}/<ECRのリポジトリ名>:${CIRCLE_SHA1}'　　(7)イメージのPush
+          filters:
+            branches:
+              only:
+                - staging
