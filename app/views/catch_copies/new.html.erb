@@ -1,23 +1,45 @@
 <div class="contents row">
   <div class="container">
     <%= form_with(model: @catch_copy, local: true) do |f| %>
-      <h3>
-        あなたの「ベストタイトル」 を投稿しよう
+      
+      <h3 >
+        <div class="fa-lg far fa-question-circle yureru-s"></div>あなたの「ベストタイトル」を投稿しよう
       </h3>
-        <div class="swiper-container">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide"><img src="https://haniwaman.com/wp-content/uploads/2018/05/swiper01.png" alt="Swiper01"></div>
-          <div class="swiper-slide"><img src="https://haniwaman.com/wp-content/uploads/2018/05/swiper02.png" alt="Swiper02"></div>
-          <div class="swiper-slide"><img src="https://haniwaman.com/wp-content/uploads/2018/05/swiper03.png" alt="Swiper03"></div>
-        </div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
-      </div>
-      <%= f.text_field :image, placeholder: "求人画像のURLを入力", autofocus: true %>
-      <%= f.text_field :title, placeholder: "画像に合うキャッチコピー(タイトル)を入力", autofocus: true, maxlength: "20" %>
-      <%= f.text_field :job_category, placeholder: "職種を入力(例:飲食店など)", autofocus: true %>
-      <%= f.text_field :target, placeholder: "キャッチコピーのターゲットを入力(例:学生など)", autofocus: true %>
+      <%= render partial: 'slide' %>
+      <%= f.text_field :title, placeholder: "タイトル(キャッチコピー)を入力", autofocus: true, maxlength: "20" %>
+      <div class="explanation">以下の条件で、「応募したい！」と思えるタイトルを作成しよう！</div>
+      <div class="boder"></div>
+      <div class="info"><h2>《求人情報》</h2></div>
+      <div class="explanation">※上の画像をクリックすると、下記項目は自動で入力されます※</div>
+      <%= f.text_field :image, class:"image_send" %>   
+      <%= f.text_field :job_category, class:"send_job" %>
+      <%= f.label :ターゲット %>
+      <%= f.text_field :target, class:"target", placeholder: "自動入力" %>
+      <%= f.label :時給 %>
+      <%= f.text_field :pay, class:"pay", placeholder: "自動入力" %>
+      <%= f.label :勤務シフト %>
+      <%= f.text_field :shift, class:"shift", placeholder: "自動入力" %>
+      <%= f.label :最寄り駅からの距離 %>
+      <%= f.text_field :commuting, class:"commuting", placeholder: "自動入力" %>
       <%= f.submit "SEND" %>
     <% end %>
   </div>
+</div>
+
+<div id="Modal" class="modal">
+    <div class="modal-wrap">
+        <div class="modal-bg"></div>
+        <div class="modal-box">
+            <div class="inner">
+                <div class="fa fa-2x fa-times modal-close"></div>
+                <h2><div class="fas fa-edit"></div>新規投稿ページの使い方</h2>
+                <div class="modal_explanation">
+                <p>画像をクリックする事で「求人情報」欄に情報が入力されます。</p>
+                <p>その情報から「応募したい！」と思うキャッチコピーを作成しましょう。</p>
+                </div>
+                <div class="gif" id="" style="background-image: url('/dougasetumei.gif')">
+
+            </div>
+        </div>
+    </div>
 </div>

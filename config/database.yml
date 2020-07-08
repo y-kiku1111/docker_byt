@@ -7,8 +7,14 @@ default: &default
   pool: 5
 
 development:
-  <<: *default
-  database: myapp_development
+  adapter: postgresql
+  encoding: unicode
+  database: postgres
+  pool: 5
+  username: <%= ENV['RAILS_DATABASE_USERNAME'] || 'postgres' %>
+  password: <%= ENV['RAILS_DATABASE_PASSWORD'] || 'postgres' %>
+  host: db
+  port: 5432
 
 test:
   <<: *default

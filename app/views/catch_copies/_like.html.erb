@@ -1,8 +1,9 @@
- <span class="fa-lg fas fa-heart icon-btn"><%= catch_copy.likes.count %></span>
 
 <% if Like.find_by(user_id: current_user.id, catch_copy_id: catch_copy.id) %>
-  <%= link_to '応援しない',  destroy_like_path(catch_copy), method: :delete, id: "like", remote: true %>
-  <span class="fa-lg fas fa-heart icon-btn"><%= catch_copy.likes.count %></span>
+  <div class="fa-lg fas fa-heart icon-btn2"><%= catch_copy.likes.count %></div>
+  <%= link_to 'ハート取り消し', destroy_like_path(catch_copy), method: :delete, id: "like2", remote: true %>
 <% else %>
-  <%= link_to '投稿者を応援', create_like_path(catch_copy), method: :post, id: "like", remote: true %>
+  <span class="fa-lg fas fa-heart icon-btn"><%= catch_copy.likes.count %></span>
+  <div class="heart"></div>
+  <%= link_to '応募したい！', create_like_path(catch_copy), method: :post, id: "like", remote: true %>
 <% end %>

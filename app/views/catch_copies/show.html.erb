@@ -13,20 +13,47 @@
           </ul>
         </div>
       <% end %>
-      <span class="title">
-        <%= @catch_copy.title %>
-      </span>
+
+      <%= link_to("/catch_copies/#{@catch_copy.id}") do %>
       <%= image_tag(@catch_copy.image,class: 'image') %>
+      <% end %>
+
+      <span class="title">
+      <%= link_to("/catch_copies/#{@catch_copy.id}") do %>
+        <%= @catch_copy.title %>
+      <% end %>
+      </span>
+
+      <div class="job_commuting">
+      <span>勤務地：</span>
+      </div>
+      <%= simple_format(@catch_copy.commuting,class: 'job_commuting_min') %>
+
+      <div class="job_pay">
+      <span>給与：</span>
+      </div>
+      <%= simple_format(@catch_copy.pay,class: 'job_pay_value') %>
+
+      <div class="job_shuift">
+        <span>勤務時間：</span>
+      </div>
+      <%= simple_format(@catch_copy.shift,class: 'job_shift_time') %>
+
       <div class="job_category">
         <span>職種：</span>
       </div>
       <%= simple_format(@catch_copy.job_category,class: 'job_name') %>
-       <div class="target">
-       <span>ターゲット：
-       </div>
-       </span>
+
+      <div class="target">
+        <span>ターゲット：</span>
+      </div>
       <%= simple_format(@catch_copy.target,class: 'target_name') %>
-  </div>
+
+      <div class ="<%= @catch_copy.id %>">
+          <%= render partial: 'catch_copies/like', locals: { catch_copy: @catch_copy } %>
+      </div>
+    </div>
+
     <div class="container">
     <% if current_user %>
       <%= form_for( [@catch_copy, @comment], local: true) do |form| %>

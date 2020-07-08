@@ -1,10 +1,17 @@
 # Best Your Title
-このアプリは、より共感できるキャッチコピー(タイトル)」を投稿し、
-他の方にコメントやいいね(共感)され、キャッチコピーセンスを上げる事を
-目的としたアプリです。
+このアプリは、求人広告のライター初心者や採用担当者が、
+求人広告を書く際に「応募したい！」と思ってもらえるような
+キャッチコピーを書けるよう、練習をするサイトです。
 
-![toukyoutop](https://user-images.githubusercontent.com/63326271/85952012-8cb88e80-b9a1-11ea-8d18-50c334dc1e61.png)
-![f823687e57e552392a9c81293762ba4c](https://user-images.githubusercontent.com/63326271/85952162-61826f00-b9a2-11ea-9eae-2e9b4a790f7e.jpg)
+[リンク]:https://www.bestyourtitle.com/
+※ゲストログイン機能から気軽にお試し頂けます※
+
+![0807b84593e579d5e9515addd31381f5](https://user-images.githubusercontent.com/63326271/86881167-d125f600-c128-11ea-9d43-195848ed8872.gif)
+
+
+# 特に見ていただきたい点(インフラ面)
+- Dockerを使い、ECS(FARGATE)/ECRで本番環境をサーバーレスで運用している点。
+- AWSを使い、ALBを通すことで常時SSL通信を行っている点。
 
 # 機能一覧:
 
@@ -25,6 +32,7 @@
 
 ## その他
 - ページ遷移(loading)ビュー
+- 新着順、ランキング順での一覧
 
 # 使用技術一覧:
 - Sass(scss)
@@ -33,29 +41,19 @@
 - Javascript / jQuery
 
 ## 開発環境
-- Dcoker
+- Docker/docker-compose
 - ruby 2.5.0
 - Rails 5.2.3
 
-# 今後について
-現在開発途中のため、下記内容を順次
-実装していきます。
-
-## インフラの構成
-デプロイ後は、下記内容にて構成予定となります。
-- CircleCIによる自動デプロイ
-- AWS(EC2、RDS、ELB、Route53、ACM、S3を予定)
+## インフラ構成
+- AWS(ECS(FARGATE)/ECR/ELB/Route53/ACM/RDS)
 - Nginx, unicorn
+- CircleCIによる自動デプロイ
 
-## テスト
+## テスト(実装予定)
 - rubocop
 - Rspec(単体、結合テスト) 
 - CircleCI
-
-## 機能の追加、拡張
-- いいねランキングの実装
-- 投稿ページの画像投稿機能を強化
-など
 
 ## テーブル設計
 

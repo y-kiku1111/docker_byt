@@ -3,17 +3,18 @@
     <%= text_field_tag "keyword",'', {placeholder: "投稿を検索する", class: "search-input"} %>
     <%= submit_tag "検索", class: "search-btn" %>
   <% end %>
-   <%= link_to '「いいね」ランキング順', catch_copies_ranking_path, method: :post,class:"ranking" %>
-
+  
+   <div class="latest" >最新記事一覧   |
+   <%= link_to 'ランキング順に変更', catch_copies_ranking_path, method: :post, class:"ranking" %>
+  </div>
   <div class="contents row">
     <% @catch_copies.each do |catch_copy| %>
       <%= render partial: "catch_copy", locals: { catch_copy: catch_copy } %>
     <% end %>
-
     <%= paginate(@catch_copies) %>
   </div>
 <% else %>
     <h1 class="masthead-heading">BestYourTitle</h1>
-    <span class="masthead-subheading">画像に合わせて心に響くキャッチコピーを作成しよう！</span>
+    <div class="masthead-subheading">「応募したい！」と思うキャッチコピーを作ってみよう</div>
     <a class="btn btn-primary btn-xl" href="/users/sign_up">新規登録</a>
 <% end %>
