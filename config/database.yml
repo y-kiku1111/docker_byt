@@ -13,7 +13,7 @@ development:
   pool: 5
   username: <%= ENV['RAILS_DATABASE_USERNAME'] || 'postgres' %>
   password: <%= ENV['RAILS_DATABASE_PASSWORD'] || 'postgres' %>
-  host: db
+  host: <%= ENV['RAILS_DATABASE_HOST'] || 'db' %>
   port: 5432
 
 test:

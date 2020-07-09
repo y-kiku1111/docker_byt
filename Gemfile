@@ -67,10 +67,11 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'haml-rails'
 gem 'devise'
-gem 'compass-rails', '3.1.0'
+gem 'compass-rails'
 gem 'kaminari'
 gem 'rails-i18n', '~> 5.1' 
 gem 'font-awesome-sass'
 gem 'jquery-rails'
 
-
+gem 'compass'
+gem 'sass'

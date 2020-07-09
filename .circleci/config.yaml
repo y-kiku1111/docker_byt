@@ -14,26 +14,26 @@ workflows:
       - build
       - aws-ecr/build_and_push_image:
           executor: docker_build
-          name: 'build-staging'
-          account-url: AWS_ECR_ACCOUNT_URL
-          region: AWS_REGION
+          name: '206677465993'
+          account-url: 206677465993.dkr.ecr.ap-northeast-1.amazonaws.com/kiku-alias/docker_byt
+          region: ap-northeast-1
           repo: 'kiku-alias/docker_byt'
           tag: "${CIRCLE_SHA1}"
           path: ./
-          dockerfile: Dockerfile-staging
+          dockerfile: Dockerfile
           requires:
             - build
           filters:
             branches:
               only:
-                - staging
+                - master
       - aws-ecs/deploy-service-update:
           requires:
             - build-staging
-          family: '<Fargateのタスク定義名>'
-          service-name: '<Fargateのサービス名>'
-          cluster-name: '<Fargateのクラスタ名>'
-          container-image-name-updates: 'container=<タスク定義で設定したコンテナ名>,image-and-tag=${AWS_ECR_ACCOUNT_URL}/<ECRのリポジトリ名>:${CIRCLE_SHA1}'　　(7)イメージのPush
+          family: 'byt-template2'
+          service-name: 'byt-service'
+          cluster-name: 'byt-cluster'
+          container-image-name-updates: 'container=docker_byt,image-and-tag=${AWS_ECR_ACCOUNT_URL}/kiku-alias/docker_byt:${CIRCLE_SHA1}'
           filters:
             branches:
               only:

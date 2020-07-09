@@ -17,6 +17,7 @@
 # 特に見ていただきたい点(インフラ面)
 - Dockerを使い、ECS(FARGATE)/ECRで本番環境をサーバーレスで運用している点。
 - AWSを使い、ALBを通すことで常時SSL通信を行っている点。
+- Google Analyticsによるアクセス解析と、SEO対策の導入
 
 # 機能一覧:
 
@@ -38,6 +39,7 @@
 ## その他
 - ページ遷移(loading)ビュー
 - 新着順、ランキング順での一覧
+- Google Analytics
 
 # 使用技術一覧:
 - Sass(scss)
