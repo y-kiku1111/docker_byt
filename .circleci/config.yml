@@ -1,18 +1,21 @@
 version: 2.1
 orbs:
-  aws-ecr: circleci/aws-ecr@6.5.0
-  aws-ecs: circleci/aws-ecs@0.0.10
+  aws-ecr: circleci/aws-ecr@6.7.0
+  aws-ecs: circleci/aws-ecs@1.1.0
 workflows:
-  build-and-deploy:
+  version: 2.1
+  nuxt-ecr-push:
     jobs:
-      - aws-ecr/build_and_push_image:
+      - aws-ecr/build-and-push-image:
+          name: rails-build-and-push-image
           account-url: AWS_ECR_ACCOUNT_URL
-          repo: 'kiku-alias/docker_byt'
           region: AWS_REGION
-          tag: '${CIRCLE_SHA1}'
+          repo: 'kiku-alias/docker_byt'
+          tag: "${CIRCLE_SHA1}"
       - aws-ecs/deploy-service-update:
           requires:
-            - aws-ecr/build_and_push_image
-          family: 'byt-service'
+            - rails-build-and-push-image
+          family: 'byt-template2'
+          service-name: 'byt-service'
           cluster-name: 'byt-cluster'
-          container-image-name-updates: 'container=kiku-alias/docker_byt-service,tag=${CIRCLE_SHA1}'
+          container-image-name-updates: "container=byt-container,tag=${CIRCLE_SHA1}"
