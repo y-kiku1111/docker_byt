@@ -7,7 +7,7 @@
 
 ※ゲストログイン機能から気軽に、全機能をお試し頂けます※
 
-<img src="https://user-images.githubusercontent.com/63326271/86881167-d125f600-c128-11ea-9d43-195848ed8872.gif" width="70%">
+<img src="https://user-images.githubusercontent.com/63326271/86881167-d125f600-c128-11ea-9d43-195848ed8872.gif" width="80%">
 
 
 # このサイトの特徴
@@ -19,7 +19,7 @@
 - Dockerを使い、ECS(FARGATE)/ECRで本番環境をサーバーレスで運用している点。
 - AWSを使い、ALBを通すことで常時SSL通信を行っている点。
 
-<img src="https://user-images.githubusercontent.com/63326271/87216988-a08bc980-c37f-11ea-8c7a-46716366a1cb.jpg" width="70%">
+<img src="https://user-images.githubusercontent.com/63326271/87216988-a08bc980-c37f-11ea-8c7a-46716366a1cb.jpg" width="80%">
 
 ## インフラ構成
 - AWS(ECS(FARGATE)/ECR/ELB/Route53/ACM/RDS)
