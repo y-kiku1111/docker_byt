@@ -9,7 +9,6 @@ executors:
 workflows:
   build-and-deploy:
     jobs:
-      - build
       - aws-ecr/build_and_push_image:
           executor: docker_build
           name: 'build-staging'
