@@ -9,6 +9,7 @@
 
 <img src="https://user-images.githubusercontent.com/63326271/86881167-d125f600-c128-11ea-9d43-195848ed8872.gif" width="60%">
 
+
 # このサイトの特徴
 新規投稿の画面から、画像をクリックするだけで求人情報が自動入力されます。
 この求人情報は求人広告営業を行なっていたアプリ作成者が考えた「職種別、よくあるターゲット情報」になります。
@@ -18,6 +19,25 @@
 - Dockerを使い、ECS(FARGATE)/ECRで本番環境をサーバーレスで運用している点。
 - AWSを使い、ALBを通すことで常時SSL通信を行っている点。
 - Google Analyticsによるアクセス解析と、SEO対策の導入
+
+<img src="https://user-images.githubusercontent.com/63326271/87216988-a08bc980-c37f-11ea-8c7a-46716366a1cb.jpg" width="60%">
+
+## インフラ構成
+- AWS(ECS(FARGATE)/ECR/ELB/Route53/ACM/RDS)
+- CircleCIによる自動デプロイ
+
+## ■保守性
+アプリケーションはFargateで冗長化している。
+
+## ■信頼性
+マネージドサービスのみを利用し、管理コストを低減している。
+
+## ■セキュリティー
+セキュリティーグループ設定により、不要なリクエストを受け付けないようにしている。
+
+## ■性能
+FargateでAutoScaleが可能であり、リクエスト数に応じてサーバ台数を
+自動的に増減させることで応答性能を保つことができる。
 
 # 機能一覧:
 
@@ -51,10 +71,6 @@
 - Docker/docker-compose
 - ruby 2.5.0
 - Rails 5.2.3
-
-## インフラ構成
-- AWS(ECS(FARGATE)/ECR/ELB/Route53/ACM/RDS)
-- CircleCIによる自動デプロイ
 
 ## CI
 - CircleCI
