@@ -1,29 +1,21 @@
 version: 2.1
 orbs:
-  aws-ecr: circleci/aws-ecr@1.0.0
-  aws-ecs: circleci/aws-ecs@0.0.6
-executors:
-  docker_build:
-    machine:
-      docker_layer_caching: true
+  aws-ecr: circleci/aws-ecr@0.0.2
+  aws-ecs: circleci/aws-ecs@0.0.3
 workflows:
   build-and-deploy:
     jobs:
-      - aws-ecr/build_and_push_image:
-          executor: docker_build
-          name: 'build-staging'
-          account-url: AWS_ECR_ACCOUNT_URL
-          region: AWS_REGION
+      - aws-ecr/build-and-push-image:
+          account-url: "${AWS_ECR_ACCOUNT_URL}"
           repo: 'kiku-alias/docker_byt'
+          region: ${AWS_REGION}
           tag: "${CIRCLE_SHA1}"
-          path: ./
-          dockerfile: Dockerfile
-          requires:
-            - build
       - aws-ecs/deploy-service-update:
           requires:
-            - build-staging
+            - aws-ecr/build-and-push-image
+          aws-region: ${AWS_REGION}
           family: 'byt-template2'
           service-name: 'byt-service'
           cluster-name: 'byt-cluster'
-          container-image-name-updates: 'container=docker_byt,image-and-tag=${AWS_ECR_ACCOUNT_URL}/kiku-alias/docker_byt:${CIRCLE_SHA1}'
+          container-image-name-updates: 'container=docker_byt,tag=${AWS_ECR_ACCOUNT_URL}/kiku-alias/docker_byt:${CIRCLE_SHA1}'
+          container-image-name-updates: "container=${AWS_RESOURCE_NAME_PREFIX}-service,tag=${CIRCLE_SHA1}"
