@@ -23,6 +23,7 @@
 
 ## インフラ構成
 - AWS(ECS(FARGATE)/ECR/ELB/Route53/ACM/RDS)
+今回の構成でのメリットは以下の4つとなります。
 
 ## 保守性
 アプリケーションはFargateで冗長化している。
