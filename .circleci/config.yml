@@ -14,7 +14,7 @@ workflows:
       - aws-ecr/build_and_push_image:
           executor: docker_build
           name: '206677465993'
-          account-url: 206677465993.dkr.ecr.ap-northeast-1.amazonaws.com/kiku-alias/docker_byt
+          account-url: "206677465993.dkr.ecr.ap-northeast-1.amazonaws.com/kiku-alias/docker_byt"
           region: ap-northeast-1
           repo: 'kiku-alias/docker_byt'
           tag: "${CIRCLE_SHA1}"

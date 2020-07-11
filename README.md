@@ -7,7 +7,7 @@
 
 ※ゲストログイン機能から気軽に、全機能をお試し頂けます※
 
-<img src="https://user-images.githubusercontent.com/63326271/86881167-d125f600-c128-11ea-9d43-195848ed8872.gif" width="60%">
+<img src="https://user-images.githubusercontent.com/63326271/86881167-d125f600-c128-11ea-9d43-195848ed8872.gif" width="70%">
 
 
 # このサイトの特徴
@@ -15,29 +15,26 @@
 この求人情報は求人広告営業を行なっていたアプリ作成者が考えた「職種別、よくあるターゲット情報」になります。
 実際に様々なシチュエーションで求人キャッチコピーを考えるため、有益な練習になります。
 
-# 特に見ていただきたい点(インフラ面)
+# 特に見ていただきたい点
 - Dockerを使い、ECS(FARGATE)/ECRで本番環境をサーバーレスで運用している点。
 - AWSを使い、ALBを通すことで常時SSL通信を行っている点。
-- Google Analyticsによるアクセス解析と、SEO対策の導入
 
-<img src="https://user-images.githubusercontent.com/63326271/87216988-a08bc980-c37f-11ea-8c7a-46716366a1cb.jpg" width="60%">
+<img src="https://user-images.githubusercontent.com/63326271/87216988-a08bc980-c37f-11ea-8c7a-46716366a1cb.jpg" width="70%">
 
 ## インフラ構成
 - AWS(ECS(FARGATE)/ECR/ELB/Route53/ACM/RDS)
-- CircleCIによる自動デプロイ
 
-## ■保守性
+## 保守性
 アプリケーションはFargateで冗長化している。
 
-## ■信頼性
+## 信頼性
 マネージドサービスのみを利用し、管理コストを低減している。
 
-## ■セキュリティー
+## セキュリティー
 セキュリティーグループ設定により、不要なリクエストを受け付けないようにしている。
 
-## ■性能
-FargateでAutoScaleが可能であり、リクエスト数に応じてサーバ台数を
-自動的に増減させることで応答性能を保つことができる。
+## 性能
+FargateでAutoScaleが可能であり、リクエスト数に応じてサーバ台数を自動的に増減させることで応答性能を保つことができる。
 
 # 機能一覧:
 
@@ -59,7 +56,7 @@ FargateでAutoScaleが可能であり、リクエスト数に応じてサーバ�
 ## その他
 - ページ遷移(loading)ビュー
 - 新着順、ランキング順での一覧
-- Google Analytics
+- Google Analyticsの導入
 
 # 使用技術一覧:
 - Sass(scss)
