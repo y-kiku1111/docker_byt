@@ -54,10 +54,12 @@
 
 ## インフラ構成
 - AWS(ECS(FARGATE)/ECR/ELB/Route53/ACM/RDS)
-- Nginx, unicorn
 - CircleCIによる自動デプロイ
+
+## CI
+- CircleCI
 
 ## テスト(実装予定)
 - rubocop
 - Rspec(単体、結合テスト) 
-- CircleCI
+
