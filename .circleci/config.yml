@@ -10,6 +10,7 @@ workflows:
           repo: 'kiku-alias/docker_byt'
           region: ${AWS_REGION}
           tag: "${CIRCLE_SHA1}"
+          name: 'aws-ecr/build-and-push-image'
       - aws-ecs/deploy-service-update:
           requires:
             - aws-ecr/build-and-push-image
@@ -17,5 +18,4 @@ workflows:
           family: 'byt-template2'
           service-name: 'byt-service'
           cluster-name: 'byt-cluster'
-          container-image-name-updates: 'container=docker_byt,tag=${AWS_ECR_ACCOUNT_URL}/kiku-alias/docker_byt:${CIRCLE_SHA1}'
-          container-image-name-updates: "container=${AWS_RESOURCE_NAME_PREFIX}-service,tag=${CIRCLE_SHA1}"
+          container-image-name-updates: "container=kiku-alias/docker_byt,tag=${CIRCLE_SHA1}"
