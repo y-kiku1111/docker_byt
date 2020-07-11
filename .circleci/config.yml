@@ -18,5 +18,5 @@ workflows:
           family: 'byt-template2'
           service-name: 'byt-service'
           cluster-name: 'byt-cluster'
-          container-image-name-updates: "container=byt-template2,tag=${CIRCLE_SHA1}"
+          container-image-name-updates: "container=docker_byt,tag=${CIRCLE_SHA1}"
 
