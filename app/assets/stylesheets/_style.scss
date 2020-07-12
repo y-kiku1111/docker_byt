@@ -127,7 +127,7 @@ header.header {
   left: 0;
   right: 0;
   z-index: 5;
-  height: 62px;
+  height: 4em;
   display: flex;
   justify-content: space-around;
 
@@ -140,18 +140,42 @@ header.header {
       a {
         @extend .btn;
         display: block;
-        width: 140px;
+        width: 10em;
       }
     }
     div.grid-6 {
       float: right;
       text-align: right;
+      width: 19em;
+
       a.post {
         @extend .btn;
         display: inline-left;
-
+        width: 9em;
       }
     }
+
+    a.guest {
+      @extend .btn;
+      display: inline-left;
+      width: 12em;
+    }
+
+    .user_menu{
+      width: 9em;
+      
+      .user_info{
+          a {
+            display: block;
+            padding: 5px;
+            color: $white;
+            &:hover {
+              background-color: $accent;
+              color: #fff;
+            }
+          }
+        }
+      }
   }
   .user_nav {
     position: relative;

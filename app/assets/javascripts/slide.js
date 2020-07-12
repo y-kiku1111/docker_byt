@@ -188,7 +188,7 @@ $(document).ready(function() {
       $(".target").val("40代/ドライバー経験者向け");
       $(".pay").val("時給1,300円");
       $(".shift").val("7:00〜16:00");
-      $(".commuting").val("葛西駅から徒歩20分(車通勤OK)");
+      $(".commuting").val("葛西駅から車で10分");
     });
   });
 

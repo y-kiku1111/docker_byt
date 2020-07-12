@@ -94,6 +94,6 @@ class CatchCopiesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def catch_copy_params
-      params.require(:catch_copy).permit(:title, :target, :job_category, :image,:pay,:shift,:commuting).merge(user_id: current_user.id)
+      params.require(:catch_copy).permit(:title, :target, :job_category, :image,:pay, :shift, :commuting).merge(user_id: current_user.id)
     end
 end
