@@ -185,7 +185,7 @@ $(document).ready(function() {
     $(".slides__img").eq(2).click( function() {
       $(".image_send").val("/photo/driver.jpg");
       $(".send_job").val("ドライバー・運転手");
-      $(".target").val("40代/ドライバー経験者向け");
+      $(".target").val("40代/経験者向け");
       $(".pay").val("時給1,300円");
       $(".shift").val("7:00〜16:00");
       $(".commuting").val("葛西駅から車で10分");
